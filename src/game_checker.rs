@@ -58,20 +58,20 @@ impl GameChecker {
         let num_of_o = table.count(Markers::O);
 
         if max_num_x_inline == MARKS_TO_WIN && num_of_x == num_of_o + 1 {
-            return "X".to_string();
+            return "X Wins".to_string();
         } else if max_num_o_inline == MARKS_TO_WIN
             && num_of_x == num_of_o
             && max_num_x_inline != MARKS_TO_WIN
         {
-            return "O".to_string();
+            return "O Wins".to_string();
         }
 
         if (MATRIX_COL * MATRIX_ROW % 2 == 0 && num_of_x == num_of_o)
             || (MATRIX_COL * MATRIX_ROW % 2 != 0 && num_of_x == num_of_o + 1)
         {
-            return "EMPATE".to_string();
+            return "TIE".to_string();
         }
 
-        "NULO".to_string()
+        "Null Game".to_string()
     }
 }
